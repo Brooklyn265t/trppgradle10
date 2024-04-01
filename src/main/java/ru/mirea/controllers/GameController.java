@@ -1,25 +1,27 @@
 package ru.mirea.controllers;
 
-import java.io.InputStreamReader;
-import java.util.List;
-import java.util.Optional;
-
 import com.opencsv.bean.CsvToBeanBuilder;
-
 import io.micronaut.http.HttpResponse;
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
-
 import ru.mirea.entity.Game;
-
-/** Контроллер для работы с играми. */
+import java.io.InputStreamReader;
+import java.util.List;
+import java.util.Optional;
+/** 
+ * Контроллер для работы с играми.
+  */
 @Controller("/game")
 public class GameController {
 
-    /** Список игр. */
+    /**
+     *  Список игр.
+      */
     private final List<Game> gameList;
 
-    /** Конструктор. */
+    /** 
+     * Конструктор. 
+     * */
     public GameController() {
         gameList = new CsvToBeanBuilder<Game>(
         new InputStreamReader(
