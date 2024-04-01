@@ -20,7 +20,8 @@ public class GameController {
     /** Конструктор. */
     public GameController() {
         gameList = new CsvToBeanBuilder<Game>(
-        new InputStreamReader(this.getClass().getResourceAsStream("/MOCK_DATA.csv"))).withType(Game.class).build().parse();
+        new InputStreamReader(
+        this.getClass().getResourceAsStream("/MOCK_DATA.csv"))).withType(Game.class).build().parse();
     }
 
     /**
